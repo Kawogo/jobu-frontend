@@ -37,6 +37,9 @@ const EditJob = () => {
     updatedReqs[i] = { ...updatedReqs[i], name: value };
     setReqs(updatedReqs);
 
+    console.log(reqs);
+    
+
   };
 
 
@@ -66,6 +69,10 @@ const EditJob = () => {
       requirements: reqs,
     };
 
+
+    console.log('FINAL JOB', finalJob);
+    
+
     editPostMutation.mutate(finalJob)
 
   };
@@ -75,6 +82,7 @@ const EditJob = () => {
       mutationFn: (reqId: number | undefined) => deleteJobRequirement(jobId, reqId),
       onSuccess: () => {
           queryClient.invalidateQueries({ queryKey: ['job-edit', jobId] })
+          console.log('REQS AFTER DEL: ', reqs);  
       }
    })
    

@@ -4,6 +4,7 @@ import JobList from './views/job/JobList'
 import Job from './views/job/Job'
 import EditJob from './views/job/EditJob'
 import CreateJob from './views/job/CreateJob'
+import Login from './views/auth/Login'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
       <Route path='/jobs/create' element={<CreateJob />} />
       <Route path='/jobs/:id' element={<Job/>} />
       <Route path='/jobs/:id/edit' element={<EditJob />} />
+      <Route path='/login' element={<Login />} />
     </Routes>
     </>
   )
